@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            span{
+                color:rgb(79, 109, 169);
+            }
+            div{
+                width:200px;color:rgb(67, 157, 157)
+            }
+            button{
+                width:250px;
+                height:50px;
+                margin-left:50px;
+                color:black;
+                background-color: aqua;
+                border-color:aquamarine;
+            }
+            div{font-size:xx-large;margin-left:500px}
+        </style>
+    </head>
+    <body>
+        <button onclick="timing()">计时开始</button>
+        <div id="demo">
+
+        </div>
+        <script>
+            var click=1;
+            var i=0;
+            var timer=null;
+            function timing(){
+                var obody=document.getElementById("demo")
+                click=click%2;
+                if(click==1)timer=setInterval(updatenNum,1000);
+                else clearInterval(timer);
+                click++;
+
+                function updateNum(){
+                    var j=i++;
+                    obady.innerHTML="Time passed:"+"<span>"+j+"</span>"+"s";
+                }
+            }
+        </script>
+    </body>
+</html>
